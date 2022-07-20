@@ -49,7 +49,9 @@ def start_tabs():
 
     with tab3:
         st.header("Dashboard")
-        st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
+        url_gra = "http://ibts-compute.ecn.purdue.edu:3000/d/uxmtKcgVk/asabe_hack?orgId=1"
+        st.components.v1.iframe(url_gra, width=None, height=1000, scrolling=True)
+
     
     with tab4:
         url = 'https://www.streamlit.io/'

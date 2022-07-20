@@ -1,0 +1,5 @@
+.DS_store
+*.h5
+__pycache__
+*.swp
+icpa_webapp

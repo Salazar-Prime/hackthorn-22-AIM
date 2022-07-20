@@ -8,12 +8,7 @@ def sendEmail(emailID, prediction):
     sender = gmail_user
     receivers = [emailID]
 
-    message = """
-    Subject: Results for image upload are here:
-
-    Classification is %s
-    """%(receivers[0])
-    sent_from = 'goat@ngoyo.com'
+    sent_from = gmail_user
     to = [emailID]
     subject = 'Results are Here'
     body = "The class of the uploaded image is: " + prediction
@@ -26,12 +21,15 @@ def sendEmail(emailID, prediction):
     %s
     """ % (sent_from, ", ".join(to), subject, body)
     
-    try:
-        smtpObj = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-        smtpObj.ehlo()
-        smtpObj.login(gmail_user, gmail_password)
-        smtpObj.sendmail(sender, receivers, message)     
-        smtpObj.close()    
-        print("Successfully sent email")
-    except smtplib.SMTPException:
-        print("Error: unable to send email")
+# try:
+    smtpObj = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+    smtpObj.ehlo()
+    smtpObj.login(gmail_user, gmail_password)
+    smtpObj.sendmail(sender, receivers, body)     
+    smtpObj.close()    
+    print("Successfully sent email")
+    # except SMTPResponseException as e:
+    #     error_code = e.smtp_code
+    #     error_message = e.smtp_error
+    #     print(error_code)
+    #     print(error_message)

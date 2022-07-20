@@ -3,3 +3,4 @@
 __pycache__
 *.swp
 icpa_webapp
+*sofar.csv

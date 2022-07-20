@@ -39,10 +39,3 @@ def get_model(uploaded_file):
 
         
         return [predictionFunny, prediction, classNo]
-
-            #st.image(display_image)
-
-            # exif_path = 'img3.JPG'
-            # exif_info = image_coordinates(exif_path)
-
-            # st.write(task)
